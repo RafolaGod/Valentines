@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Первый фрейм -->
+    <div class="frame" id="frame1">
+        <div class="container">
+            <h1>Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button id="yes-btn">Of course!!!</button>
+                <button id="no-btn">Nope</button>
+            </div>
+            <div class="cats">
+                <img src="img/cat1.png" alt="Cat 1">
+                <img src="img/cat2.png" alt="Cat 2">
+                <img src="img/cat3.png" alt="Cat 3">
+                <img src="img/cat4.png" alt="Cat 4">
+            </div>
+        </div>
+    </div>
+     <!-- Фрейм 2: Новый экран с картинкой -->
+     <div class="frame" id="frame2">
+        <div class="container">
+            <div class="image-wrapper">
+                <img src="img/cats.png" class="full-image" alt="Cats">
+                <div class="blur-overlay"></div>
+                <div class="text-overlay">Урааааааааааа!!!!</div>
+                <div class="enter-hint">кликай Enter чтобы продолжить</div>
+            </div>
+        </div>
+    </div>
+    <!-- Второй фрейм -->
+    <div class="frame" id="frame3">
+        <div class="container">
+            <h1 class="neucha-title">
+                Теперь тематический мини-тестик
+                <img src="img/amniam.png" alt="Amnyam" class="amnyam-img">
+            </h1>
+            <div class="description">
+                Катюша, в тестике будет 7 вопросов,<br>
+                у каждого вопроса будет 4 варианта ответа😊<br>
+                Каждый вариант соответствует определённому стилю любви,<br>
+                в конце ты узнаешь, какой больше относится к тебе 🤗
+            </div>
+            <img src="img/start_heart.png" alt="Start" class="start-btn">
+            <div class="cats">
+                <img src="img/cat_with_hearts.png" alt="Cat with Laptop" class="cat-laptop">
+                <img src="img/cat_with_laptop.png" alt="Cat with Hearts" class="cat-hearts">
+            </div>
+        </div>
+    </div>
+
+    <!-- Фреймы с вопросами -->
+    <div class="frame" id="frame4">
+        <div class="container">
+            <div class="question-number">1.</div>
+            <h1 class="question-text">Как ты чаще всего выражаешь свою любовь?</h1>
+            <img src="img/crown.png" alt="Crown" class="crown-img">
+            <div class="answers">
+                <div class="answer" data-emoji="⏳">⏳Временем — провожу как можно больше времени вместе.</div>
+                <div class="answer" data-emoji="🤗">🤗 Прикосновениями — обнимаю, держу за руку, глажу по голове, делаю массаж.</div>
+                <div class="answer" data-emoji="🎁">🎁 Подарками — радую сюрпризами, пишу открытки, выбираю подарки.</div>
+                <div class="answer" data-emoji="💬">💬Словами — говорю комплименты, слова поддержки, признания.</div>
+            </div>
+            <div class="next-btn">
+                <span>NEXT</span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+            <img src="img/pink_cat.png" alt="Pink Cat" class="pink-cat-img">
+        </div>
+    </div>
+
+    <div class="frame" id="frame5">
+        <div class="container">
+            <div class="question-number">2.</div>
+            <h1 class="question-text">Что для тебя важнее всего?</h1>
+            <img src="img/flowers.png" alt="Crown" class="crown-img">
+            <div class="answers">
+                <div class="answer" data-emoji="💬">💬Слышать тёплые слова, признания и комплименты.</div>
+                <div class="answer" data-emoji="🤗">🤗Чувствовать прикосновения, объятия, поцелуи.</div>
+                <div class="answer" data-emoji="🎁">🎁Получать и дарить подарки, которые выражают заботу.</div>
+                <div class="answer" data-emoji="⏳">⏳Совместные моменты и приключения, время вместе.</div>
+            </div>
+            <div class="next-btn">
+                <span>NEXT</span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+            <img src="img/cute_puss.png" alt="Pink Cat" class="pink-cat-img">
+        </div>
+    </div>
+
+    <div class="frame" id="frame6">
+        <div class="container">
+            <div class="question-number">3.</div>
+            <h1 class="question-text">Какой идеальный сюрприз для тебя?</h1>
+            <img src="img/for_you.png" alt="Crown" class="crown-img">
+            <div class="answers">
+                <div class="answer" data-emoji="💬">💬 Написанное от руки письмо с признаниями в любви.</div>
+                <div class="answer" data-emoji="🤗">🤗Тёплое объятие после долгой разлуки.</div>
+                <div class="answer" data-emoji="🎁">🎁Подарок, который мне давно хотелось получить.</div>
+                <div class="answer" data-emoji="⏳">⏳Путешествие или неожиданный совместный отдых.</div>
+            </div>
+            <div class="next-btn">
+                <span>NEXT</span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+            <img src="img/amniam_with_presents.png" alt="Pink Cat" class="pink-cat-img">
+        </div>
+    </div>
+
+    <div class="frame" id="frame7">
+        <div class="container">
+            <div class="question-number">4.</div>
+            <h1 class="question-text">Какой романтический жест тебе ближе?</h1>
+            <img src="img/letter.png" alt="Crown" class="crown-img">
+            <div class="answers">
+                <div class="answer" data-emoji="💬">💬Слова: “Ты для меня лучшая, я так тебя люблю!”</div>
+                <div class="answer" data-emoji="🤗">🤗Нежные прикосновения, держаться за руки в любое время.</div>
+                <div class="answer" data-emoji="🎁">🎁Когда мне дарят что-то значимое.</div>
+                <div class="answer" data-emoji="⏳">⏳Когда кто-то посвящает мне весь день, полностью отдавая внимание.</div>
+            </div>
+            <div class="next-btn">
+                <span>NEXT</span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+            <img src="img/cat_questions.png" alt="Pink Cat" class="pink-cat-img">
+        </div>
+    </div>
+
+    <div class="frame" id="frame8">
+        <div class="container">
+            <div class="question-number">5.</div>
+            <h1 class="question-text">Что тебя больше всего поддержит после тяжелого дня?</h1>
+            <img src="img/mini_heart.png" alt="Crown" class="crown-img">
+            <div class="answers">
+                <div class="answer" data-emoji="💬">💬 Разговор и слова поддержки от любимого человека.</div>
+                <div class="answer" data-emoji="🤗">🤗 Объятие, после которого сразу становится легче.</div>
+                <div class="answer" data-emoji="🎁">🎁Маленький приятный сюрприз, чтобы поднять настроение.</div>
+                <div class="answer" data-emoji="⏳">⏳Если кто-то просто побудет рядом.</div>
+            </div>
+            <div class="next-btn">
+                <span>NEXT</span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+            <img src="img/funny_cat.png" alt="Pink Cat" class="pink-cat-img">
+        </div>
+    </div>
+
+    <div class="frame" id="frame9">
+        <div class="container">
+            <div class="question-number">6.</div>
+            <h1 class="question-text">Как ты предпочитаешь отмечать годовщины и праздники?</h1>
+            <img src="img/cactus.png" alt="Crown" class="crown-img">
+            <div class="answers">
+                <div class="answer" data-emoji="💬">💬Сказать любимому человеку, как много он для меня значит.</div>
+                <div class="answer" data-emoji="🤗">🤗Обниматься, танцевать, быть как можно ближе.</div>
+                <div class="answer" data-emoji="🎁">🎁Дарить и получать подарки, вложив в них смысл.</div>
+                <div class="answer" data-emoji="⏳">⏳Провести весь день вместе, без отвлекающих факторов.</div>
+            </div>
+            <div class="next-btn">
+                <span>NEXT</span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+            <img src="img/strange_cat.png" alt="Pink Cat" class="pink-cat-img">
+        </div>
+    </div>
+
+    <div class="frame" id="frame10">
+        <div class="container">
+            <div class="question-number">7.</div>
+            <h1 class="question-text">Что тебя больше всего ранит в отношениях?</h1>
+            <img src="img/flowers_in_vase.png" alt="Crown" class="crown-img">
+            <div class="answers">
+                <div class="answer" data-emoji="💬">💬Когда любимый человек редко говорит добрые слова.</div>
+                <div class="answer" data-emoji="🤗">🤗Когда избегают тактильного контакта и не проявляют нежность.</div>
+                <div class="answer" data-emoji="🎁">🎁Когда забывают о праздниках и сюрпризах.</div>
+                <div class="answer" data-emoji="⏳">⏳Когда мне не уделяют достаточно внимания.</div>
+            </div>
+            <div class="next-btn">
+                <span>NEXT</span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+            <img src="img/cute_kitty.png" alt="Pink Cat" class="pink-cat-img">
+        </div>
+    </div>
+
+    <!-- Финальный фрейм -->
+    
+    <div class="frame" id="frame11">
+        <div class="container">
+            
+            <div class="result-text" id="result-text"></div>
+            <div class="result-description-text" id="result-description-text"></div>
+            <img src="img/nosy_dog.png" alt="Final Cat" class="nosy-dog-img">
+            <img src="img/loved_cat.png" alt="Final Cat" class="loved-cat-img">
+            <img src="img/dog_with_butterfly.png" alt="Final Cat" class="butterfly-dog-img">
+            <img src="img/puppy.png" alt="Final Cat" class="puppy-img">
+            <img src="img/flowers1.png" alt="Final Cat" class="flowers1-img">
+            <img src="img/flowers2.png" alt="Final Cat" class="flowers2-img">
+            <img src="img/flowers3.png" alt="Final Cat" class="flowers3-img">
+            <img src="img/flowers4.png" alt="Final Cat" class="flowers4-img">
+            <img src="img/flowers5.png" alt="Final Cat" class="flowers5-img">
+            <img src="img/flowers6.png" alt="Final Cat" class="flowers6-img">
+
+             <div class="next-btn-bel">
+                <span>Далей<span>
+                <img src="img/arrow.png" alt="Arrow" class="arrow-img">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
