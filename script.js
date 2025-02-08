@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const noBtn = document.getElementById("no-btn");
     const startBtn = document.querySelector(".start-btn");
     const nextBtn = document.querySelectorAll(".next-btn");
+   //const nextBtnBel = document.getElementById(".next-btn-bel");
     const answers = document.querySelectorAll(".answer");
 
     // Все фреймы (frame1 - стартовый, fram2 - котики, frame3 - инструкция, frame4-frame10 - вопросы, frame10 - результат)
@@ -18,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("frame8"),
         document.getElementById("frame9"),
         document.getElementById("frame10"),
-        document.getElementById("frame11")
+        document.getElementById("frame11"),
+        document.getElementById("frame12")
     ];
 
     // Текущий фрейм и результаты
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 2. Переход к первому вопросу (Start)
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && currentFrameIndex === 1) {
+        if (e.key === " " && currentFrameIndex === 1) {
             switchFrame(frames[1], frames[2]);
         }
     })
@@ -48,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
     nextBtn.forEach((btn, index) => {
         btn.addEventListener("click", () => handleNextButton(index));
     });
+    // nextBtnBel.forEach((btn, index) => {
+    //     btn.addEventListener("click", () => switchFrame(frames[10], frames[11]));
+    // });
+    
+    
+
 
     // 5. Убегающая кнопка "Nope"
     document.addEventListener("mousemove", moveButton);
@@ -87,7 +95,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Переключение фреймов с анимацией
     function switchFrame(currentFrame, nextFrame) {
-        currentFrame.classList.add("hidden");
+        if(currentFrameIndex === 0 || currentFrameIndex === 1 || currentFrameIndex === 10){
+        currentFrame.classList.add("hidden-down");
+        }
+        else{
+            currentFrame.classList.add("hidden-right");
+        }
         setTimeout(() => {
             currentFrame.style.display = "none";
             nextFrame.style.display = "flex";
@@ -119,10 +132,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
          //Переход к следующему фрейму или результатам
-         if (currentFrameIndex < 9) { // 7 вопросов (frame3-frame9)
+         if (currentFrameIndex < 11) { // 7 вопросов (frame3-frame9)
              switchFrame(frames[currentFrameIndex], frames[currentFrameIndex + 1]);
              //currentFrameIndex += 1;
-         } else {
+         } else if(currentFrameIndex == 9) {
              switchFrame(frames[currentFrameIndex], frames[10]);
              showResults();
          }
@@ -155,7 +168,16 @@ function showResults() {
     // Формируем текст с результатами
     let resultHTML;
     let resultDescText;
-    switch(getMaxResult())
+    let switchResult;
+    if(getMaxResult().length > 1){
+        let switchResultArray = getMaxResult().split(",");
+        switchResult = switchResultArray[0];
+        console.log(switchResult);
+    }   
+    else {
+        switchResult = getMaxResult();
+    }
+    switch(switchResult)
     {
         case '⏳': resultHTML =` <div class="result-title">Твой стиль любви: «ВРЕМЯ ВМЕСТЕ»:</div>`;
                     resultDescText = `<div class="result-title">Ты ценишь время, проведённое</div>
@@ -202,7 +224,7 @@ function getMaxResult() {
         .filter(([_, value]) => value === max)
         .map(([emoji]) => emoji);
         
-    return emojis.join(", ");
+    return emojis.join(",");
 }
 document.getElementById('next-frame-button').addEventListener('click', function() {
     // Переход к следующему фрейму (можно добавить логику перехода)
