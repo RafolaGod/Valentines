@@ -70,13 +70,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // 5. Убегающая кнопка "Nope"
-    document.addEventListener("mousemove", moveButton);
+        document.addEventListener("mousemove", moveButton);
 
-    // ========================
-    // ФУНКЦИИ
-    // ========================
+    let targetX = 0, targetY = 0;
+    let isMoving = false;
 
-    // Плавное перемещение кнопки "Nope"
     function moveButton(event) {
         const btnRect = noBtn.getBoundingClientRect();
         const distance = Math.sqrt(
@@ -84,26 +82,56 @@ document.addEventListener("DOMContentLoaded", function() {
             Math.pow(event.clientY - (btnRect.top + btnRect.height / 2), 2)
         );
 
-        if (distance < 300) {
+        if (distance < 350 && !isMoving) {
             const { x, y } = getRandomPosition();
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
+            targetX = x;
+            targetY = y;
+            isMoving = true;
+            animateButton();
         }
     }
 
-    // Генерация случайной позиции
     function getRandomPosition() {
         return {
             x: Math.max(0, Math.min(
-                Math.random() * (window.innerWidth - noBtn.offsetWidth), 
+                Math.random() * (window.innerWidth - noBtn.offsetWidth),
                 window.innerWidth - noBtn.offsetWidth
             )),
             y: Math.max(0, Math.min(
-                Math.random() * (window.innerHeight - noBtn.offsetHeight), 
+                Math.random() * (window.innerHeight - noBtn.offsetHeight),
                 window.innerHeight - noBtn.offsetHeight
             ))
         };
     }
+
+    function animateButton() {
+        let startX = parseFloat(noBtn.style.left) || 0;
+        let startY = parseFloat(noBtn.style.top) || 0;
+        let progress = 0;
+        let speed = 0.05; // Чем меньше, тем плавнее движение
+
+        function step() {
+            progress += speed;
+            if (progress >= 1) {
+                progress = 1;
+                isMoving = false;
+            }
+            
+            noBtn.style.left = `${lerp(startX, targetX, progress)}px`;
+            noBtn.style.top = `${lerp(startY, targetY, progress)}px`;
+            
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    function lerp(start, end, t) {
+        return start + (end - start) * t;
+    }
+
 
     // Переключение фреймов с анимацией
     function switchFrame(currentFrame, nextFrame) {
