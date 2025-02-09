@@ -107,11 +107,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Переключение фреймов с анимацией
     function switchFrame(currentFrame, nextFrame) {
-        if(currentFrameIndex === 0 || currentFrameIndex === 1 || currentFrameIndex === 10){
-        currentFrame.classList.add("hidden-down");
+        if(currentFrameIndex > 1 && currentFrameIndex < 10){
+        
+        currentFrame.classList.add("hidden-right");
         }
         else{
-            currentFrame.classList.add("hidden-right");
+            currentFrame.classList.add("hidden-down");
         }
         setTimeout(() => {
             currentFrame.style.display = "none";
