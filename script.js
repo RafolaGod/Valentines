@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const startBtn = document.querySelector(".start-btn");
     const nextBtn = document.querySelectorAll(".next-btn");
    //const nextBtnBel = document.getElementById(".next-btn-bel");
+    const entWishBtn = document.getElementById('enterWishBtn'); 
     const answers = document.querySelectorAll(".answer");
 
     const frames = [
@@ -19,7 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("frame9"),
         document.getElementById("frame10"),
         document.getElementById("frame11"),
-        document.getElementById("frame12")
+        document.getElementById("frame12"),
+        document.getElementById("frame13"),
+        document.getElementById("frame14")
     ];
 
     // Текущий фрейм и результаты
@@ -39,6 +42,14 @@ document.addEventListener("DOMContentLoaded", function() {
             switchFrame(frames[1], frames[2]);
         }
     })
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === " " && currentFrameIndex === 11) {
+            switchFrame(frames[11], frames[12]);
+        }
+    })
+
+
     startBtn.addEventListener("click", () => switchFrame(frames[2], frames[3]));
     // 3. Обработка выбора ответов
     answers.forEach(answer => {
@@ -49,6 +60,8 @@ document.addEventListener("DOMContentLoaded", function() {
     nextBtn.forEach((btn, index) => {
         btn.addEventListener("click", () => handleNextButton(index));
     });
+    entWishBtn.addEventListener("click", () => switchFrame(frames[12], frames[13]));
+
     // nextBtnBel.forEach((btn, index) => {
     //     btn.addEventListener("click", () => switchFrame(frames[10], frames[11]));
     // });
@@ -243,4 +256,25 @@ document.getElementById('next-frame-button').addEventListener('click', function(
     // Переход к следующему фрейму (можно добавить логику перехода)
     alert('Переход к следующему фрейму!');
 });
+});
+
+
+document.getElementById('enterWishBtn').addEventListener('click', function() {
+    const wish1 = document.getElementById('wish1').value;
+    const wish2 = document.getElementById('wish2').value;
+    const wish3 = document.getElementById('wish3').value;
+
+    const message = `1. ${wish1}\n2. ${wish2}\n3. ${wish3}`;
+
+    // Инициализация EmailJS
+    emailjs.init('2oLkdF0MbjFbovK35'); // Замените на ваш User ID из EmailJS
+
+    // Отправка email
+    emailjs.send('service_vvz1cvm', 'template_n3qxkku', {
+        message: message
+    }).then(function(response) {
+        //alert('Ваши желания отправлены!');
+    }, function(error) {
+        //alert('Ошибка при отправке: ' + JSON.stringify(error));
+    });
 });

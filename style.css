@@ -33,8 +33,6 @@ html, body {
     transition: transform 0.5s ease-in-out;
 }
 
-
-
 .frame.hidden-down {
     transform: translateY(-100%);
 }
@@ -504,11 +502,16 @@ top: 275px;
     display: none; 
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(255,224,178,0.5), rgba(255,209,220,0.5));
+    background: radial-gradient(50% 50% at 50% 50%, #FFE0B2 0%, rgba(255, 209, 220, 0.5) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Underdog', cursive;
     overflow: hidden;
 
 }
+/* Frame 30 */
+
+
+
 
 
 #frame12 {
@@ -596,6 +599,159 @@ top: 275px;
     
 }
 
+.wish-title{
+    /* Напиши три своих желания на будущее */
+
+        position: absolute;
+        width: 1445px;
+        height: 125px;
+        left: 145px;
+        top: 117px;
+
+        font-family: 'Neucha';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 96px;
+        line-height: 130%;
+        /* identical to box height, or 125px */
+        text-align: center;
+
+        color: #000000;
+
+        text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+
+#frame13{
+
+    display: none;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+      
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 182, 199, 0.7) 0%, rgba(255, 224, 178, 0.7) 100%);
+
+}
+
+
+input {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.enter-wish-button {
+    padding: 10px 20px;
+    font-size: 40px;
+    background-color: #F48BA5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: absolute;
+    bottom:10%;
+}
+
+.wish-title{
+        /* Напиши три своих желания на будущее */
+
+    position: absolute;
+    width: 1445px;
+    height: 125px;
+    left: 145px;
+    top: 117px;
+
+    font-family: 'Neucha';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 130%;
+    text-align: center;
+
+    color: #000000;
+
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.heart-wish{
+    position: absolute;
+    width: 500px;
+    height: auto;
+    bottom: 20px;
+    right: 10px;
+}
+#wish1{
+    position: absolute;
+    top:37%;
+}
+#wish2{
+    position: absolute;
+    top:47%;
+}
+#wish3{
+    position: absolute;
+    top:57%;
+}
+
+.enter-wish-button:hover {
+    background-color: white;
+    color: #F48BA5;
+}
+
+
+#frame14{
+    display: none;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+      
+    overflow: hidden;
+    position: relative;
+    background-color: #FFB6C7B3;
+    ;
+}
+.wish-text{
+    position: absolute;
+    width: 1108px;
+    height: 620px;
+    left: 406px;
+    top: 122px;
+
+    font-family: 'Podkova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 130%;
+    /* or 62px */
+    text-align: center;
+
+    color: #000000;
+
+    text-shadow: 4px 2px 1px rgba(0, 0, 0, 0.25);
+
+}
+
+.final-kitty{
+    position: absolute;
+    width: 400px;
+    height: auto;
+    bottom: 0px;
+    left: 20px;
+}
 /* Анимации */
 @keyframes fadeInUp {
     to {
