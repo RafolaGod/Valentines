@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("frame11"),
         document.getElementById("frame12"),
         document.getElementById("frame13"),
-        document.getElementById("frame14")
+        document.getElementById("frame14"),
+        document.getElementById("frame15")
     ];
 
     // Текущий фрейм и результаты
@@ -46,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("keydown", (e) => {
         if (e.key === " " && currentFrameIndex === 11) {
             switchFrame(frames[11], frames[12]);
+        }
+    })
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === " " && currentFrameIndex === 13) {
+            switchFrame(frames[13], frames[14]);
         }
     })
 
