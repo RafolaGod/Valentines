@@ -754,12 +754,10 @@ input {
     ;
 }
 .wish-text {
-    display: flex
-;
+    display: flex;
     justify-content: center;
     padding-top: 0px;
     width: 1000px;
-    height: 00px;
     height: 80%;
     top: 5%;
     font-family: 'Podkova';
