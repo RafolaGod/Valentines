@@ -768,6 +768,7 @@ input {
     font-size: 40px;
     line-height: 130%;
     /* or 62px */
+    justify-content: center;
     text-align: center;
 
     color: #000000;
