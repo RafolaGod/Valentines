@@ -35,8 +35,25 @@ document.addEventListener("DOMContentLoaded", function() {
     // ========================
 
     // 1. Переход на фрейм с инструкцией (Of course)
-    yesBtn.addEventListener("click", () => switchFrame(frames[0], frames[1]));
+    yesBtn.addEventListener("click", () => handleYesButton());
+    function handleYesButton() {
+        switchFrame(frames[0], frames[1]);
+        let audio = document.getElementById("background-music");
+        audio.volume = 0.5; // Устанавливаем громкость (от 0.0 до 1.0)
+    
+        // Пытаемся запустить музыку сразу
+        let playPromise = audio.play();
 
+        // Если браузер заблокировал автозапуск, ждем взаимодействия пользователя
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+            document.addEventListener('click', () => {
+                audio.play();
+            }, { once: true }); // Срабатывает только один раз
+        });
+    }
+        audio.play();
+    }
     // 2. Переход к первому вопросу (Start)
     document.addEventListener("keydown", (e) => {
         if (e.key === " " && currentFrameIndex === 1) {

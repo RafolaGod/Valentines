@@ -206,6 +206,7 @@ button {
     font-size: 23px;
     color: black;
     /*text-align: center;*/
+    
     text-align: justify;
     line-height: 1.7;
     position: absolute;
@@ -289,10 +290,16 @@ line-height: 130%;
     width: 80px;
     height: auto;
     position: absolute;
-    top: 5%;
-    right: 5%;
+    top: 0%;
+    right: 0%;
 }
-
+.for-u-img {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 0%;
+    right: 2%;
+}
 .answers {
     position: absolute;
     top: 19%;
