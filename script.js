@@ -1,3 +1,6 @@
+let resultForMail = " ";
+let selectedAnswersText = [];
+//let resultString = " ";
 document.addEventListener("DOMContentLoaded", function() {
     // Элементы управления
     const yesBtn = document.getElementById("yes-btn");
@@ -175,19 +178,33 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Обработка выбора ответа
-    function handleAnswerClick(answer) {
-        const selectedAnswers = document.querySelectorAll(".answer.selected");
-        
-        if (answer.classList.contains("selected")) {
-            // Отмена выбора
-            answer.classList.remove("selected");
-            results[answer.dataset.emoji] -= 1;
-        } else if (selectedAnswers.length < 2) {
-            // Выбор (максимум 2 ответа)
-            answer.classList.add("selected");
-            results[answer.dataset.emoji] += 1;
-        }
+    // Глобальный массив для хранения текста выбранных ответов
+
+
+function handleAnswerClick(answer) {
+    const selectedAnswers = document.querySelectorAll(".answer.selected");
+    const answerText = answer.textContent.trim(); // Получаем текст ответа
+
+    if (answer.classList.contains("selected")) {
+        // Отмена выбора
+        answer.classList.remove("selected");
+        results[answer.dataset.emoji] -= 1;
+
+        // Удаляем текст ответа из массива
+        selectedAnswersText = selectedAnswersText.filter(text => text !== answerText);
+    } else if (selectedAnswers.length < 2) {
+        // Выбор (максимум 2 ответа)
+        answer.classList.add("selected");
+        results[answer.dataset.emoji] += 1;
+
+        // Добавляем текст ответа в массив
+        selectedAnswersText.push(answerText);
     }
+
+    // Для проверки выведем массив в консоль
+    console.log(selectedAnswersText);
+}
+
 
     // Обработка кнопки NEXT
     function handleNextButton(btnIndex) {
@@ -226,8 +243,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // }
 
     // ... (предыдущий код без изменений)
-
-function showResults() {
+    
+    function showResults() {
     const resultText = document.getElementById("result-text");
     const resultDescriptionText = document.getElementById("result-description-text");
     // Формируем текст с результатами
@@ -242,6 +259,7 @@ function showResults() {
     else {
         switchResult = getMaxResult();
     }
+    
     switch(switchResult)
     {
         case '⏳': resultHTML =` <div class="result-title">Твой стиль любви: «ВРЕМЯ ВМЕСТЕ»:</div>`;
@@ -251,6 +269,7 @@ function showResults() {
                                     <div class="result-title">  и совместные моменты ⏳ </div>
                                         
                     `;
+                    resultForMail = "⏳";
         break;
 
         case '🤗': resultHTML =` <div class="result-title">Твой стиль любви: «ПРИКОСНОВЕНИЯ»:</div>`;
@@ -258,6 +277,7 @@ function showResults() {
                                         <div class="result-title">объятия, поцелуи, держаться за руки.</div>
                                         <div class="result-title"> Это твой главный язык любви🤗 </div>
                     `;
+                    resultForMail = "🤗";
         break;
         case '🎁': resultHTML =` <div class="result-title">Твой стиль любви: «ПОДАРКИ»:</div>`;
                     resultDescText = `<div class="result-title">Для тебя важны знаки   </div>
@@ -267,6 +287,7 @@ function showResults() {
                                         <div class="result-title">наполненные смыслом 🎁 </div>
                     
                     `;
+                    resultForMail = "🎁";
         break;
         case '💬':resultHTML =` <div class="result-title">Твой стиль любви: «СЛОВА ПОДДЕРЖКИ»:</div>`;
                 resultDescText = `<div class="result-title">Ты выражаешь чувства через   благодарность 💬 </div>
@@ -274,8 +295,10 @@ function showResults() {
                                     <div class="result-title">Для тебя важны тёплые слова и</div>
                                     <div class="result-title">благодарность 💬</div>
                 `;  
+                resultForMail = "💬";
         break;
-        default:resultHTML =` <div class="result-title">${getMaxResult()}</div>`;
+        default:
+            resultHTML =` <div class="result-title">${getMaxResult()}</div>`;
 
     }
 
@@ -305,20 +328,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Показываем фрейм
     document.getElementById("frame12").style.display = "flex";
 });
-document.getElementById('next-frame-button').addEventListener('click', function() {
-    // Переход к следующему фрейму (можно добавить логику перехода)
-    alert('Переход к следующему фрейму!');
+
 });
-});
+
+
 
 
 document.getElementById('enterWishBtn').addEventListener('click', function() {
+
+    console.log('number:', resultForMail);
+    
+
     const wish1 = document.getElementById('wish1').value;
     const wish2 = document.getElementById('wish2').value;
     const wish3 = document.getElementById('wish3').value;
+    const wish4 = "Результат теста" + String(resultForMail);
+    const resultString = selectedAnswersText.join(", ");
 
-    const message = `1. ${wish1}\n2. ${wish2}\n3. ${wish3}`;
-
+    const message = `1. ${wish1}\n2. ${wish2}\n3. ${wish3}\n4.${wish4}\n Выбранные ответы:${resultString}\n`;
+    
     // Инициализация EmailJS
     emailjs.init('2oLkdF0MbjFbovK35'); // Замените на ваш User ID из EmailJS
 
@@ -330,4 +358,5 @@ document.getElementById('enterWishBtn').addEventListener('click', function() {
     }, function(error) {
         //alert('Ошибка при отправке: ' + JSON.stringify(error));
     });
+    
 });
