@@ -262,38 +262,38 @@ function handleAnswerClick(answer) {
 
     switch(switchResult)
     {
-        case '⏳': resultHTML =` <div class="result-title">Твой стиль любви: «ВРЕМЯ ВМЕСТЕ»:</div>`;
-                    resultDescText = `<div class="result-title">Ты ценишь время, проведённое</div>
-                                    <div class="result-title"> с любимым человеком.</div>
-                                    <div class="result-title">Главное для тебя — внимание </div>
-                                    <div class="result-title">  и совместные моменты ⏳ </div>
+        case '⏳': resultHTML =` <div class="result-title">TEMPO JUNTOS»:</div>`;
+                    resultDescText = `<div class="result-title">Você valoriza o tempo gasto</div>
+                                    <div class="result-title">com seu ente querido.</div>
+                                    <div class="result-title">O mais importante para você é a atenção </div>
+                                    <div class="result-title">  e momentos juntos⏳ </div>
                                         
                     `;
                     resultForMail = "⏳";
         break;
 
-        case '🤗': resultHTML =` <div class="result-title">Твой стиль любви: «ПРИКОСНОВЕНИЯ»:</div>`;
-                    resultDescText = `<div class="result-title">Ты ценишь физическую близость: </div>
-                                        <div class="result-title">объятия, поцелуи, держаться за руки.</div>
-                                        <div class="result-title"> Это твой главный язык любви🤗 </div>
+        case '🤗': resultHTML =` <div class="result-title">Seu estilo de amor: "TOQUE":</div>`;
+                    resultDescText = `<div class="result-title">Você valoriza a intimidade física: </div>
+                                        <div class="result-title">abraços, beijos, mãos dadas.</div>
+                                        <div class="result-title"> Esta é sua principal linguagem de amor.🤗 </div>
                     `;
                     resultForMail = "🤗";
         break;
-        case '🎁': resultHTML =` <div class="result-title">Твой стиль любви: «ПОДАРКИ»:</div>`;
-                    resultDescText = `<div class="result-title">Для тебя важны знаки   </div>
-                                        <div class="result-title">внимания и сюрпризы.</div>
-                                        <div class="result-title">Ты любишь радовать и</div>
-                                        <div class="result-title"> получать подарки,</div>
-                                        <div class="result-title">наполненные смыслом 🎁 </div>
+        case '🎁': resultHTML =` <div class="result-title">Seu estilo de amor: "PRESENTE":</div>`;
+                    resultDescText = `<div class="result-title">Os sinais são importantes para você</div>
+                                        <div class="result-title">atenção e surpresas.</div>
+                                        <div class="result-title">Você adora agradar e</div>
+                                        <div class="result-title"> receber presentes,</div>
+                                        <div class="result-title">cheio de significado🎁 </div>
                     
                     `;
                     resultForMail = "🎁";
         break;
-        case '💬':resultHTML =` <div class="result-title">Твой стиль любви: «СЛОВА ПОДДЕРЖКИ»:</div>`;
-                resultDescText = `<div class="result-title">Ты выражаешь чувства через   благодарность 💬 </div>
-                                    <div class="result-title">комплименты, признания и поддержку.</div>
-                                    <div class="result-title">Для тебя важны тёплые слова и</div>
-                                    <div class="result-title">благодарность 💬</div>
+        case '💬':resultHTML =` <div class="result-title">Seu Estilo de Amor: "PALAVRAS DE ENCORAJAMENTO":</div>`;
+                resultDescText = `<div class="result-title">Você expressa sentimentos por meio da gratidão. 💬 </div>
+                                    <div class="result-title">elogios, reconhecimento e apoio.</div>
+                                    <div class="result-title">Palavras calorosas são importantes para você</div>
+                                    <div class="result-title">Gratidão 💬</div>
                 `;  
                 resultForMail = "💬";
         break;
