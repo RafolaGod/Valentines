@@ -294,7 +294,7 @@ function handleAnswerClick(answer) {
                                     <div class="result-title">elogios, reconhecimento e apoio.</div>
                                     <div class="result-title">Palavras calorosas são importantes para você</div>
                                     <div class="result-title">Obrigado 💬</div>
-                `;  
+                    `;  
                 resultadoParaCorreio = "💬";
         break;
         default:
